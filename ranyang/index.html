@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ranyang</title>
+    <!-- My Style -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <!-- Navbar start -->
+    <nav class="navbar">
+      <a href="#home" class="navbar-logo"><span>Wayarking</span>Game</a>
+
+      <div class="navbar-nav">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">Tentang Kami</a>
+        <a href="../index.html#fitur">Fitur</a>
+        <a href="../index.html#menu">Games</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="quote/indexquote.html" id="quote"
+          ><span class="material-symbols-outlined"> view_in_ar </span></a
+        >
+
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <div id="page">
+      <div id="Message-Container">
+        <div id="message">
+          <h1>Selamat!</h1>
+          <p>Kamu telah sampai ke Dewi Sinta</p>
+          <p id="moves"></p>
+          <input
+            id="okBtn"
+            type="button"
+            onclick="toggleVisablity('Message-Container')"
+            value="Hebat!"
+          />
+        </div>
+      </div>
+
+      <br />
+      <div id="menu">
+        <div class="custom-select">
+          <select id="diffSelect">
+            <option value="10">Mudah</option>
+            <option value="15">Medium</option>
+            <option value="25">Sulit</option>
+            <option value="38">Ekstrim</option>
+          </select>
+        </div>
+        <input
+          id="startMazeBtn"
+          type="button"
+          onclick="makeMaze()"
+          value="Mulai"
+        />
+      </div>
+
+      <div id="view">
+        <div id="mazeContainer">
+          <canvas
+            id="mazeCanvas"
+            class="border"
+            height="1100"
+            width="1100"
+          ></canvas>
+        </div>
+      </div>
+
+      <p id="instructions">
+        Di game kali ini ayo tuntaskan mencari wayang Dewi Sinta
+      </p>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"
+    ></script>
+
+    <!-- My Javascript -->
+    <script src="script.js"></script>
+    <script src="../js/script.js"></script>
+
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

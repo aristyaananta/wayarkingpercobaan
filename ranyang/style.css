@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --primary: #f8b26d;
+  --bg: #010101;
+}
+
+html,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("../img/gamiyang-background.png");
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid #513c28;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+#view {
+  margin-top: 30px;
+}
+
+#mazeContainer {
+  top: 15px;
+  opacity: 0;
+  display: inline-block;
+  margin: auto;
+  border-radius: 10px;
+}
+#mazeContainer #mazeCanvas {
+  margin: 0;
+  display: block;
+  border: solid 2px black;
+  height: 400px;
+  background-color: #f8b26d;
+}
+input,
+select {
+  cursor: pointer;
+  background-color: #f09336;
+  height: 45px;
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  appearance: none;
+}
+input:hover,
+select:hover {
+  background-color: #f8b26d;
+}
+input:active,
+select:active {
+  background-color: #f09336;
+}
+input:focus,
+select:focus {
+  outline: none;
+}
+.custom-select {
+  display: inline-block;
+}
+.custom-select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: 125px center;
+}
+#Message-Container {
+  visibility: hidden;
+  color: white;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+#Message-Container #message {
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+  font-size: 20px;
+}
+#page {
+  text-align: center;
+  height: auto;
+  width: auto;
+  margin: auto;
+}
+#page #menu {
+  padding: 6rem;
+  height: 65px;
+  box-sizing: border-box;
+  margin: auto;
+}
+#page #menu h1 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 3.2rem;
+}
+#page #view {
+  position: absolute;
+  top: 28%;
+  bottom: 0;
+  left: 0rem;
+  right: 0;
+  width: 100%;
+  height: auto;
+}
+.border {
+  border: 10px black solid;
+  border-radius: 10px;
+}
+
+#instructions {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Extra small devices (phones, 600px and down) */
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  #page #view {
+    top: 20%;
+  }
+
+  input,
+  select {
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  input,
+  select {
+    width: 120px;
+  }
+  #mazeContainer #mazeCanvas {
+    height: 350px;
+  }
+
+  #page #view {
+    top: 25%;
+  }
+}
